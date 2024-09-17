@@ -89,7 +89,7 @@ export function SearchPosts() {
   const hasResults = results.length > 0;
 
   return (
-    <div className='flex items-center'>
+    <div className='hidden items-center md:flex'>
       <form className='flex gap-2 relative' onSubmit={handleSubmit}>
         <Popover open={isPopoverOpen && hasResults}>
           <PopoverTrigger

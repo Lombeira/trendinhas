@@ -85,6 +85,7 @@ export const Header: FunctionComponent = () => {
           {config.blog.name}
         </h1>
       </Link>
+
       <SearchPosts />
 
       <Navigation />

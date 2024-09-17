@@ -29,7 +29,7 @@ export default async function Page() {
     <div className='container mx-auto px-5'>
       <Header />
       <div className='mt-20 mb-12 text-center'>
-        <h1 className='mb-2 text-4xl font-bold'>Palavras chave</h1>
+        <h1 className='mb-2 text-3xl md:text-4xl font-bold'>Palavras chave</h1>
         <p className='text-lg opacity-50'>Lista de todas as tags</p>
       </div>
       <div className='my-10 max-w-6xl text-balance text-center text-xl mb-48'>
