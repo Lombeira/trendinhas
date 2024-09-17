@@ -33,6 +33,7 @@ export async function generateMetadata({
     },
   };
 }
+
 interface Params {
   slug: string;
 }

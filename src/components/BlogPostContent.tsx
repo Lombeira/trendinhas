@@ -60,7 +60,7 @@ export const BlogPostContent = ({ post }: { post: GetPostResult["post"] }) => {
   return (
     <div>
       <div className="prose lg:prose-xl dark:prose-invert mx-auto lg:prose-h1:text-4xl mb-10 lg:mt-20 break-words">
-        <h1>{title}</h1>
+        <h1 className="text-2xl md:text-4xl">{title}</h1>
         <PostContent content={content} />
 
         <div className="mt-10 opacity-40 text-sm">

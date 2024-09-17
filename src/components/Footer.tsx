@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 
 export const Footer: FunctionComponent = () => {
   return (
-    <section className="mt-8 md:mt-16 mb-12">
+    <footer className="mt-8 md:mt-16 mb-12">
       <div className="flex items-center justify-between">
         <div className="text-sm text-muted-foreground">
           © {config.blog.copyright} {new Date().getFullYear()}
@@ -36,6 +36,6 @@ export const Footer: FunctionComponent = () => {
           Blog powered by wisp
         </Link>
       </div>
-    </section>
+    </footer>
   );
 };

@@ -12,15 +12,20 @@ import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FunctionComponent } from 'react';
+import { SearchPosts } from './SearchPosts';
+
 interface MenuItem {
   name: string;
   href: string;
   openInNewTab?: boolean;
 }
+
 const menuItems: MenuItem[] = [
   { name: 'Notícias', href: '/' },
+  { name: 'Palavras-chave', href: '/tag' },
   { name: 'Sobre', href: '/about' },
 ];
+
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
 
@@ -74,13 +79,15 @@ export const Navigation: FunctionComponent = () => {
 
 export const Header: FunctionComponent = () => {
   return (
-    <section className='flex items-center justify-between mt-8 md:mt-16 mb-12'>
+    <header className='flex items-center justify-between mt-8 mb-8 md:mt-12 md:mb-12'>
       <Link href='/'>
         <h1 className='text-3xl md:text-5xl font-bold tracking-tighter leading-tight'>
           {config.blog.name}
         </h1>
       </Link>
+      <SearchPosts />
+
       <Navigation />
-    </section>
+    </header>
   );
 };

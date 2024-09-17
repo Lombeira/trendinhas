@@ -23,10 +23,10 @@ Trendinhas`;
 
 export async function generateMetadata() {
   return {
-    title: 'Sobre nós',
+    title: 'Trendinhas - Sobre nós',
     description: 'Notícias diversas sobre o brasil e o mundo.',
     openGraph: {
-      title: 'Sobre nós',
+      title: 'Trendinhas - Sobre nós',
       description: 'Notícias diversas sobre o brasil e o mundo.',
       images: [
         signOgImageUrl({

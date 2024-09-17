@@ -11,14 +11,16 @@ export const BlogPostPreview: FunctionComponent<{
   post: GetPostsResult['posts'][0];
 }> = ({ post }) => {
   return (
-    <div className='break-words'>
+    <div className='break-words shadow-lg group'>
       <Link href={`/blog/${post.slug}`}>
         <div className='aspect-[16/9] relative'>
           <Image
             alt={post.title}
-            className='object-cover'
+            className='object-cover rounded-t-xl group-hover:transform group-hover:scale-105 transition-transform'
             src={post.image || '/images/placeholder.webp'}
+            sizes='(min-width: 1024px) 50vw, 100vw'
             fill
+            priority
           />
         </div>
       </Link>
@@ -27,9 +29,13 @@ export const BlogPostPreview: FunctionComponent<{
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
         </h2>
         <div className='prose lg:prose-lg italic tracking-tighter text-muted-foreground'>
-          {formatDate(post.publishedAt || post.updatedAt, "dd 'de' MMMMMMM ',' yyyy", {
-            locale: ptBR,
-          })}
+          {formatDate(
+            post.publishedAt || post.updatedAt,
+            "dd 'de' MMMMMMM ',' yyyy",
+            {
+              locale: ptBR,
+            }
+          )}
         </div>
         <div className='prose lg:prose-lg leading-relaxed md:text-lg line-clamp-4 text-muted-foreground'>
           {post.description}
@@ -53,7 +59,7 @@ export const BlogPostsPreview: FunctionComponent<{
   return (
     <div
       className={cn(
-        'grid grid-cols-1 gap-16 lg:gap-28 md:grid-cols-2 md:my-16 my-8',
+        'grid md:min-h-[70vh] grid-cols-1 gap-16 lg:gap-28 md:grid-cols-2 md:my-16 my-8',
         className
       )}
     >
