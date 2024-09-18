@@ -11,12 +11,12 @@ export const BlogPostPreview: FunctionComponent<{
   post: GetPostsResult['posts'][0];
 }> = ({ post }) => {
   return (
-    <div className='break-words shadow-lg group'>
+    <div className='break-words shadow-lg rounded-b-xl hover:scale-[1.02] transition-transform'>
       <Link href={`/blog/${post.slug}`}>
         <div className='aspect-[16/9] relative'>
           <Image
             alt={post.title}
-            className='object-cover rounded-t-xl group-hover:transform group-hover:scale-105 transition-transform'
+            className='object-cover rounded-t-xl'
             src={post.image || '/images/placeholder.webp'}
             sizes='(min-width: 1024px) 50vw, 100vw'
             fill
@@ -24,7 +24,7 @@ export const BlogPostPreview: FunctionComponent<{
           />
         </div>
       </Link>
-      <div className='grid grid-cols-1 gap-3 md:col-span-2 mt-4'>
+      <div className='grid grid-cols-1 gap-3 md:col-span-2 mt-4 p-4 cursor-pointer'>
         <h2 className='font-sans font-semibold tracking-tighter text-primary text-2xl md:text-3xl'>
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
         </h2>
