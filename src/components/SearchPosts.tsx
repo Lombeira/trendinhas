@@ -44,20 +44,25 @@ export function SearchPosts() {
     }
   };
 
-  const searchPosts = useCallback(async () => {
-    setIsSearching(true);
-    if (debouncedValue) {
-      const data = await wisp.getPosts({ query: debouncedValue });
-      setResults(data.posts);
-    }
-    setIsSearching(false);
-  }, [debouncedValue]);
+  const searchPosts = useCallback(
+    async (query: string) => {
+      if (debouncedValue && debouncedValue.length > 2) {
+        setIsSearching(true);
+        const data = await wisp.getPosts({ query });
+        setResults(data.posts);
+        setIsSearching(false);
+      }
+    },
+    [debouncedValue]
+  );
 
   useEffect(() => {
     if (!searchTerm) {
       setResults([]);
     }
-    searchPosts();
+    if (debouncedValue && debouncedValue.length > 2) {
+      searchPosts(debouncedValue);
+    }
   }, [debouncedValue, searchPosts]);
 
   // Fechar Popover ao clicar fora
@@ -89,8 +94,8 @@ export function SearchPosts() {
   const hasResults = results.length > 0;
 
   return (
-    <div className='hidden items-center md:flex'>
-      <form className='flex gap-2 relative' onSubmit={handleSubmit}>
+    <div className='flex w-64 md:w-72'>
+      <form className='relative' onSubmit={handleSubmit}>
         <Popover open={isPopoverOpen && hasResults}>
           <PopoverTrigger
             onClick={() => setIsPopoverOpen(true)} // Abrir Popover ao clicar
@@ -98,14 +103,14 @@ export function SearchPosts() {
             <Input
               name='search'
               value={searchTerm}
-              className='relative w-72'
+              className='relative w-64 md:w-72'
               placeholder='Procure matérias'
               onChange={handleChange}
             />
             {isSearching && (
               <LoaderCircle className='absolute animate-spin right-2 bottom-2' />
             )}
-            {searchTerm && hasResults && (
+            {!isSearching && searchTerm && (
               <X onClick={handleClear} className='absolute right-2 bottom-2' />
             )}
           </PopoverTrigger>

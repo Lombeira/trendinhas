@@ -38,7 +38,7 @@ export const Navigation: FunctionComponent = () => {
               href={item.href}
               target={item.openInNewTab ? '_blank' : '_self'}
               className={cn(
-                'hover:text-gray-600',
+                'hover:text-gray-600 transition-all',
                 pathname === item.href && 'font-semibold'
               )}
             >
@@ -61,7 +61,7 @@ export const Navigation: FunctionComponent = () => {
                     href={item.href}
                     target={item.openInNewTab ? '_blank' : '_self'}
                     className={cn(
-                      'block py-2',
+                      'block py-2 hover:text-gray-600 transition-all',
                       pathname === item.href && 'font-semibold'
                     )}
                   >
@@ -79,16 +79,23 @@ export const Navigation: FunctionComponent = () => {
 
 export const Header: FunctionComponent = () => {
   return (
-    <header className='flex items-center justify-between mt-8 mb-8 md:mt-12 md:mb-12'>
-      <Link href='/'>
-        <h1 className='text-3xl md:text-5xl font-bold tracking-tighter leading-tight'>
-          {config.blog.name}
-        </h1>
-      </Link>
+    <header className='flex flex-col mt-8 mb-8 md:mt-12 md:mb-12 transition-all'>
+      <div className='flex items-center justify-between'>
+        <Link href='/'>
+          <h1 className='text-3xl md:text-5xl font-bold tracking-tighter leading-tight'>
+            {config.blog.name}
+          </h1>
+        </Link>
 
-      <SearchPosts />
+        <div className='hidden w-72 md:hidden lg:flex'>
+          <SearchPosts />
+        </div>
 
-      <Navigation />
+        <Navigation />
+      </div>
+      <div className='flex mt-2 w-64 md:flex lg:hidden md:mt-4'>
+        <SearchPosts />
+      </div>
     </header>
   );
 };
