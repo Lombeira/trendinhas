@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FunctionComponent } from 'react';
 import { SearchPosts } from './SearchPosts';
+import Image from 'next/image';
 
 interface MenuItem {
   name: string;
@@ -81,11 +82,19 @@ export const Header: FunctionComponent = () => {
   return (
     <header className='flex flex-col mt-8 mb-8 md:mt-12 md:mb-12 transition-all'>
       <div className='flex items-center justify-between'>
-        <Link href='/'>
-          <h1 className='text-3xl md:text-5xl font-bold tracking-tighter leading-tight'>
-            {config.blog.name}
-          </h1>
-        </Link>
+        <div className='flex gap-3 items-center'>
+          <Image
+            alt='Logo do Trendinhas'
+            width={48}
+            height={48}
+            src='/apple-touch-icon.png'
+          />
+          <Link href='/'>
+            <h1 className='text-3xl md:text-5xl font-bold tracking-tighter leading-tight'>
+              {config.blog.name}
+            </h1>
+          </Link>
+        </div>
 
         <div className='hidden w-72 md:hidden lg:flex'>
           <SearchPosts />
