@@ -5,6 +5,8 @@ import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Script from 'next/script';
+import { GoogleScripts } from '@/components/scripts/GoogleScripts';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -33,10 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning={true}>
+      {/* google-site-verification */}
       <meta
         name='google-site-verification'
         content='RZZknuDz2BTh3-pKGGmx5zJoqaQB9zPoXsaWlU8xTMg'
       />
+      <GoogleScripts />
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased max-w-6xl m-auto',
