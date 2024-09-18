@@ -1,7 +1,7 @@
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ID;
+import { config } from "./config";
 
 export const pageview = url => {
-  window.gtag("config", GA_TRACKING_ID, {
+  window.gtag("config", config.gtag, {
     page_path: url,
   });
 };
