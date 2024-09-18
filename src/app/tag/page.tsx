@@ -9,12 +9,14 @@ export async function generateMetadata() {
   return {
     title: 'Tags',
     description: 'Diferentes categorias das nossas matérias',
+    url: `${config.baseUrl}/tag`,
     openGraph: {
       title: 'Tags',
       description: 'Diferentes categorias das nossas matérias',
+      url: `${config.baseUrl}/tag`,
       images: [
         signOgImageUrl({
-          title: 'Blog Post Categories',
+          title: 'Tags',
           brand: config.blog.name,
         }),
       ],

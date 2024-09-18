@@ -5,6 +5,7 @@ import { RelatedPosts } from '@/components/RelatedPosts';
 import { config } from '@/config';
 import { signOgImageUrl } from '@/lib/og-image';
 import { wisp } from '@/lib/wisp';
+import { url } from 'inspector';
 import { notFound } from 'next/navigation';
 import type { BlogPosting, WithContext } from 'schema-dts';
 
@@ -26,10 +27,12 @@ export async function generateMetadata({
   return {
     title,
     description,
+    url: `${config.baseUrl}/blog/${slug}`,
     openGraph: {
       title,
       description,
       images: image ? [generatedOgImage, image] : [generatedOgImage],
+      url: `${config.baseUrl}/blog/${slug}`,
     },
   };
 }
