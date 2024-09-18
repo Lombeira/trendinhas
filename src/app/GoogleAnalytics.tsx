@@ -1,6 +1,6 @@
 'use client';
 import Script from 'next/script';
-import { config } from '@/config.js';
+import { config } from '@/config';
 
 const GoogleAnalytics = () => {
   return (
