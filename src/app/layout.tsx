@@ -40,7 +40,20 @@ export default function RootLayout({
         name='google-site-verification'
         content='RZZknuDz2BTh3-pKGGmx5zJoqaQB9zPoXsaWlU8xTMg'
       />
-      <GoogleScripts />
+      {/* Script async do Google Tag Manager */}
+      <Script
+        src='https://www.googletagmanager.com/gtag/js?id=G-9W2W432781'
+        strategy='afterInteractive'
+      />
+      {/* Script de inicialização do Google Analytics */}
+      <Script id='gtag-init' strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9W2W432781');
+        `}
+      </Script>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased max-w-6xl m-auto',
