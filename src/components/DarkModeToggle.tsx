@@ -21,7 +21,7 @@ export const DarkModeToggle = () => {
 
   // Once the component has mounted, we can safely render
   return (
-    <Button name="Dark mode toggle" variant="ghost" onClick={toggleDarkMode} className="p-2">
+    <Button aria-label="Dark mode toggle" variant="ghost" onClick={toggleDarkMode} className="p-2">
       {resolvedTheme === "dark" ? (
         <Moon className="w-4 h-4" />
       ) : (

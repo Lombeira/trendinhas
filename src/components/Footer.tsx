@@ -21,8 +21,8 @@ export const Footer: FunctionComponent = () => {
           </Link>
         </div>
         <div>
-          <Link href="/rss" aria-label="Acesse nosso Feed RSS">
-            <Button name="Feed RSS" variant="ghost" className="p-2">
+          <Link id="rss_anchor" href="/rss" aria-label="Acesse nosso Feed RSS">
+            <Button aria-labelledby="rss_anchor" variant="ghost" className="p-2">
               <Rss className="w-4 h-4" />
             </Button>
           </Link>
