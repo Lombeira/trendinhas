@@ -10,7 +10,8 @@ import { Badge } from './ui/badge';
 
 export const BlogPostPreview: FunctionComponent<{
   post: GetPostsResult['posts'][0];
-}> = ({ post }) => {
+  index: number;
+}> = ({ post, index }) => {
   return (
     <div className='flex flex-col break-words shadow-lg rounded-b-xl hover:scale-[1.02] transition-transform'>
       <Link href={`/blog/${post.slug}`}>
@@ -19,9 +20,9 @@ export const BlogPostPreview: FunctionComponent<{
             alt={post.title}
             className='object-cover rounded-t-xl'
             src={post.image || '/images/placeholder.webp'}
-            sizes='(min-width: 1024px) 50vw, 100vw'
+            blurDataURL='/images/placeholder.webp'
             fill
-            priority
+            priority={index === 0}
           />
         </div>
       </Link>
@@ -66,8 +67,8 @@ export const BlogPostsPreview: FunctionComponent<{
         className
       )}
     >
-      {posts.map((post) => (
-        <BlogPostPreview key={post.id} post={post} />
+      {posts.map((post, index) => (
+        <BlogPostPreview index={index} key={post.id} post={post} />
       ))}
     </div>
   );
