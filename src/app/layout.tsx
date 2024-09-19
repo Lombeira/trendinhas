@@ -89,6 +89,11 @@ export default function RootLayout({
           `,
             }}
           />
+          <Script
+            charSet='UTF-8'
+            src='https://cdn.sendwebpush.com/sendwebpush/client_services/66ecb24ebb17a.js'
+            strategy='afterInteractive'
+          ></Script>
         </ThemeProvider>
       </body>
     </html>
