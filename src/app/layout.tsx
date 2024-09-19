@@ -43,6 +43,10 @@ export default function RootLayout({
         name='google-site-verification'
         content='RZZknuDz2BTh3-pKGGmx5zJoqaQB9zPoXsaWlU8xTMg'
       />
+      <meta
+        name='google-adsense-account'
+        content='ca-pub-4531969799798016'
+      ></meta>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased max-w-6xl m-auto',
