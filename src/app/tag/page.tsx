@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { config } from '@/config';
 import { signOgImageUrl } from '@/lib/og-image';
 import { wisp } from '@/lib/wisp';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 export async function generateMetadata() {
@@ -34,47 +35,113 @@ export default async function Page() {
         <h1 className='mb-2 text-3xl md:text-4xl font-bold'>Palavras chave</h1>
         <p className='text-lg opacity-50'>Lista de todas as tags</p>
       </div>
-      <div className='my-10 max-w-6xl text-balance text-center text-xl mb-48'>
-        {result.tags.map((tag) => (
-          <Link
-            key={tag.id}
-            href={`/tag/${tag.name}`}
-            className='text-primary mr-2 inline-block'
-          >
-            #{tag.name}
-          </Link>
-        ))}
-      </div>
-      {/* <div className='group w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]'>
-        <ul className='flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none group-hover:animate-none animate-infinite-scroll-reverse'>
+      <div className='group py-2 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]'>
+        <ul className='flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none group-hover:[animation-play-state:paused] animate-infinite-scroll-reverse'>
           {result.tags.map((tag) => (
             <li key={tag.id}>
               <Link
                 href={`/tag/${tag.name}`}
-                className='text-primary mr-2 inline-block'
+                className='text-primary mr-2 inline-block text-nowrap'
               >
-                #{tag.name}
+                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                  #{tag.name}
+                  <ArrowUpRight size={16} className='self-center' />
+                </div>
               </Link>
             </li>
           ))}
         </ul>
         <ul
-          className='flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none group-hover:animate-none animate-infinite-scroll-reverse'
+          className='flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none group-hover:[animation-play-state:paused] animate-infinite-scroll-reverse'
           aria-hidden='true'
         >
           {result.tags.map((tag) => (
             <li key={tag.id}>
               <Link
                 href={`/tag/${tag.name}`}
-                className='text-primary mr-2 inline-block'
+                className='text-primary mr-2 inline-block text-nowrap'
               >
-                #{tag.name}
+                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                  #{tag.name}
+                  <ArrowUpRight size={16} className='self-center' />
+                </div>
               </Link>
             </li>
           ))}
         </ul>
-      </div>  */}
+      </div>
 
+      <div className='group py-2 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]'>
+        <ul className='flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none group-hover:[animation-play-state:paused] animate-infinite-scroll'>
+          {result.tags.map((tag) => (
+            <li key={tag.id}>
+              <Link
+                href={`/tag/${tag.name}`}
+                className='text-primary mr-2 inline-block text-nowrap'
+              >
+                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                  #{tag.name}
+                  <ArrowUpRight size={16} className='self-center' />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ul
+          className='flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none group-hover:[animation-play-state:paused] animate-infinite-scroll'
+          aria-hidden='true'
+        >
+          {result.tags.map((tag) => (
+            <li key={tag.id}>
+              <Link
+                href={`/tag/${tag.name}`}
+                className='text-primary mr-2 inline-block text-nowrap'
+              >
+                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                  #{tag.name}
+                  <ArrowUpRight size={16} className='self-center' />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className='group py-2 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]'>
+        <ul className='flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none group-hover:[animation-play-state:paused] animate-infinite-scroll-reverse'>
+          {result.tags.map((tag) => (
+            <li key={tag.id}>
+              <Link
+                href={`/tag/${tag.name}`}
+                className='text-primary mr-2 inline-block text-nowrap'
+              >
+                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                  #{tag.name}
+                  <ArrowUpRight size={16} className='self-center' />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ul
+          className='flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none group-hover:[animation-play-state:paused] animate-infinite-scroll-reverse'
+          aria-hidden='true'
+        >
+          {result.tags.map((tag) => (
+            <li key={tag.id}>
+              <Link
+                href={`/tag/${tag.name}`}
+                className='text-primary mr-2 inline-block text-nowrap'
+              >
+                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                  #{tag.name}
+                  <ArrowUpRight size={16} className='self-center' />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
       <Footer />
     </div>
   );

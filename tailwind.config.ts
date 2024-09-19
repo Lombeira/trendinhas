@@ -81,9 +81,9 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'infinite-scroll': 'infinite-scroll 60s linear infinite',
         'infinite-scroll-reverse':
-          'infinite-scroll-reverse 25s linear infinite',
+          'infinite-scroll-reverse 60s linear infinite',
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
