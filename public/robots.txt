@@ -1,0 +1,7 @@
+#
+# robots.txt
+#
+
+User-Agent: *
+Allow: /
+Sitemap: http://www.trendinhas.com.br/sitemap.xml
