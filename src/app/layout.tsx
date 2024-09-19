@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import GoogleAnalytics from './GoogleAnalytics';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -55,6 +56,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main>{children}</main>
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
