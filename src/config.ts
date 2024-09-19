@@ -6,6 +6,7 @@ const buildConfig = () => {
   const defaultTitle = process.env.NEXT_DEFAULT_METADATA_DEFAULT_TITLE || '';
   const defaultDescription = process.env.NEXT_PUBLIC_BLOG_DESCRIPTION || '';
   const gaTrackingId = process.env.NEXT_PUBLIC_GOOGLE_ID || '';
+  const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || '';
 
   return {
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000',
@@ -28,6 +29,7 @@ const buildConfig = () => {
       blogId,
     },
     gtag: gaTrackingId,
+    clarity: clarityId,
   };
 };
 

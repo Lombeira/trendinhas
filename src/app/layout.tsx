@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import GoogleAnalytics from './GoogleAnalytics';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Script from 'next/script';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -42,7 +42,6 @@ export default function RootLayout({
         name='google-site-verification'
         content='RZZknuDz2BTh3-pKGGmx5zJoqaQB9zPoXsaWlU8xTMg'
       />
-      <GoogleAnalytics />
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased max-w-6xl m-auto',
@@ -57,6 +56,33 @@ export default function RootLayout({
         >
           <main>{children}</main>
           <SpeedInsights />
+          <Script id='clarity-script' strategy='afterInteractive'>
+            {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${config.clarity}");
+          `}
+          </Script>
+          <Script
+            strategy='afterInteractive'
+            src={`https://www.googletagmanager.com/gtag/js?id=${config.gtag}`}
+          />
+          <Script
+            id='gtag-init'
+            strategy='afterInteractive'
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${config.gtag}', {
+            page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </ThemeProvider>
       </body>
     </html>
