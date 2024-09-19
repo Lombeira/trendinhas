@@ -34,6 +34,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning={true}>
+      <link rel='manifest' href='/site.webmanifest' />
+      <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
       {/* google-site-verification */}
       <meta
         name='google-site-verification'
