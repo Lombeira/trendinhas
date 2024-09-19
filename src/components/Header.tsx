@@ -50,8 +50,8 @@ export const Navigation: FunctionComponent = () => {
       </div>
       <div className='md:hidden'>
         <Sheet>
-          <SheetTrigger>
-            <Menu size='24' />
+          <SheetTrigger id="menu" aria-label="Menu">
+            <Menu size='24' aria-labelledby="menu"/>
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
