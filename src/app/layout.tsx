@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -55,6 +56,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main>{children}</main>
+          <Analytics />
           <SpeedInsights />
           <Script id='clarity-script' strategy='afterInteractive'>
             {`
