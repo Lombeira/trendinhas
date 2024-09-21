@@ -50,8 +50,8 @@ export const Navigation: FunctionComponent = () => {
       </div>
       <div className='md:hidden'>
         <Sheet>
-          <SheetTrigger id="menu" aria-label="Menu">
-            <Menu size='24' aria-labelledby="menu"/>
+          <SheetTrigger id='menu' aria-label='Menu'>
+            <Menu size='24' aria-labelledby='menu' />
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
@@ -82,19 +82,17 @@ export const Header: FunctionComponent = () => {
   return (
     <header className='flex flex-col mt-8 mb-8 md:mt-12 md:mb-12 transition-all'>
       <div className='flex items-center justify-between'>
-        <div className='flex gap-3 items-center'>
+        <Link className='flex gap-3 items-center' href='/'>
           <Image
             alt='Logo do Trendinhas'
             width={48}
             height={48}
             src='/apple-touch-icon.png'
           />
-          <Link href='/'>
-            <h1 className='text-3xl md:text-5xl font-bold tracking-tighter leading-tight'>
-              {config.blog.name}
-            </h1>
-          </Link>
-        </div>
+          <h1 className='text-3xl md:text-5xl font-bold tracking-tighter leading-tight'>
+            {config.blog.name}
+          </h1>
+        </Link>
 
         <div className='hidden w-72 md:hidden lg:flex'>
           <SearchPosts />
