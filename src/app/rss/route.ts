@@ -27,6 +27,7 @@ export async function GET() {
     feed_url: urlJoin(baseUrl, "/rss"),
     pubDate: new Date(),
   });
+  
   posts.forEach((post) => {
     feed.item(post);
   });

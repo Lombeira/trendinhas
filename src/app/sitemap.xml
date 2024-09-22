@@ -5,6 +5,9 @@
     <sitemap>
         <loc>https://trendinhas.com.br/blog/sitemap.xml</loc>
     </sitemap>
+        <sitemap>
+        <loc>https://trendinhas.com.br/news/sitemap.xml</loc>
+    </sitemap>
     <sitemap>
         <loc>https://trendinhas.com.br/tag/sitemap.xml</loc>
     </sitemap>
