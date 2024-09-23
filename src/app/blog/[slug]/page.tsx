@@ -5,9 +5,8 @@ import { RelatedPosts } from '@/components/RelatedPosts';
 import { config } from '@/config';
 import { signOgImageUrl } from '@/lib/og-image';
 import { wisp } from '@/lib/wisp';
-import { url } from 'inspector';
 import { notFound } from 'next/navigation';
-import type { BlogPosting, WithContext } from 'schema-dts';
+import type { NewsArticle, WithContext } from 'schema-dts';
 
 export async function generateMetadata({
   params: { slug },
@@ -49,24 +48,39 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
     return notFound();
   }
 
-  const { title, publishedAt, updatedAt, image, author } = result.post;
+  const { title, publishedAt, updatedAt, image, author, tags } = result.post;
 
-  const jsonLd: WithContext<BlogPosting> = {
+  const jsonLd: WithContext<NewsArticle> = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': 'NewsArticle',
     headline: title,
     image: image ? image : undefined,
     datePublished: publishedAt ? publishedAt.toString() : undefined,
     dateModified: updatedAt.toString(),
     author: {
       '@type': 'Person',
-      name: author.name ?? undefined,
-      image: author.image ?? undefined,
+      name: author.name || 'Redator Trendinhas',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: title,
+      logo: {
+        '@type': 'ImageObject',
+        url: image ? image : undefined,
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${config.baseUrl}/blog/${slug}`,
+      },
     },
   };
 
   return (
     <>
+      <meta
+        name='news_keywords'
+        content={tags.map((tag) => tag.name).join(', ')}
+      ></meta>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

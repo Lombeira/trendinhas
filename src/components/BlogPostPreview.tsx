@@ -21,6 +21,7 @@ export const BlogPostPreview: FunctionComponent<{
             className='object-cover rounded-t-xl'
             src={post.image || '/images/placeholder.webp'}
             blurDataURL='/images/placeholder.webp'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 33vw'
             fill
             priority={index === 0}
           />
