@@ -60,6 +60,7 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
     author: {
       '@type': 'Person',
       name: author.name || 'Redator Trendinhas',
+      url: 'https://www.trendinhas.com.br/',
     },
     publisher: {
       '@type': 'Organization',
