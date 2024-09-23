@@ -59,7 +59,7 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
     dateModified: updatedAt.toString(),
     author: {
       '@type': 'Person',
-      name: author.name || 'Redator Trendinhas',
+      name: 'Trendinhas',
       url: 'https://www.trendinhas.com.br/',
     },
     publisher: {
