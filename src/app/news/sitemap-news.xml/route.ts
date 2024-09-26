@@ -1,3 +1,5 @@
+export const revalidate = 60 * 5;
+
 import { NextResponse } from 'next/server';
 import { config } from '@/config';
 import { wisp } from '@/lib/wisp';
