@@ -47,7 +47,7 @@ export const BlogPostPreview: FunctionComponent<{
           {post.tags.map((tag) => (
             <div key={tag.id} className='mr-2 inline-block'>
               <Link href={`/tag/${tag.name}`}>
-                <Badge className='min-h-6'>#{tag.name}</Badge>
+                <Badge className='min-h-6 mb-2'>#{tag.name}</Badge>
               </Link>
             </div>
           ))}
