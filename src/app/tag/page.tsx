@@ -43,7 +43,7 @@ export default async function Page() {
                 href={`/tag/${tag.name}`}
                 className='text-primary mr-2 inline-block text-nowrap'
               >
-                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                <div className='bg-zinc-200 dark:bg-zinc-800 p-4 px-6 rounded flex gap-2'>
                   #{tag.name}
                   <ArrowUpRight size={16} className='self-center' />
                 </div>
@@ -61,7 +61,7 @@ export default async function Page() {
                 href={`/tag/${tag.name}`}
                 className='text-primary mr-2 inline-block text-nowrap'
               >
-                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                <div className='bg-zinc-200 dark:bg-zinc-800 p-4 px-6 rounded flex gap-2 '>
                   #{tag.name}
                   <ArrowUpRight size={16} className='self-center' />
                 </div>
@@ -79,7 +79,7 @@ export default async function Page() {
                 href={`/tag/${tag.name}`}
                 className='text-primary mr-2 inline-block text-nowrap'
               >
-                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                <div className='bg-zinc-200 dark:bg-zinc-800 p-4 px-6 rounded flex gap-2'>
                   #{tag.name}
                   <ArrowUpRight size={16} className='self-center' />
                 </div>
@@ -97,7 +97,7 @@ export default async function Page() {
                 href={`/tag/${tag.name}`}
                 className='text-primary mr-2 inline-block text-nowrap'
               >
-                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                <div className='bg-zinc-200 dark:bg-zinc-800 p-4 px-6 rounded flex gap-2'>
                   #{tag.name}
                   <ArrowUpRight size={16} className='self-center' />
                 </div>
@@ -115,7 +115,7 @@ export default async function Page() {
                 href={`/tag/${tag.name}`}
                 className='text-primary mr-2 inline-block text-nowrap'
               >
-                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                <div className='bg-zinc-200 dark:bg-zinc-800 p-4 px-6 rounded flex gap-2'>
                   #{tag.name}
                   <ArrowUpRight size={16} className='self-center' />
                 </div>
@@ -133,7 +133,7 @@ export default async function Page() {
                 href={`/tag/${tag.name}`}
                 className='text-primary mr-2 inline-block text-nowrap'
               >
-                <div className='bg-zinc-800 p-4 px-6 rounded flex gap-2'>
+                <div className='bg-zinc-200 dark:bg-zinc-800 p-4 px-6 rounded flex gap-2'>
                   #{tag.name}
                   <ArrowUpRight size={16} className='self-center' />
                 </div>
