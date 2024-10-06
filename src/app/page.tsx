@@ -15,10 +15,6 @@ const Page = async ({
 
   return (
     <div className='container mx-auto px-5 mb-10'>
-      <meta
-        name='description'
-        content='Somos apaixonados por informação, e criamos este blog com um propósito simples: centralizar as notícias mais interessantes em um único lugar. Sabe aquele momento em que você quer ficar por dentro de tudo, mas não tem paciência para abrir mil abas? A gente te entende! Foi pensando nisso que decidimos reunir em um só espaço tudo o que é relevante, curioso e que vai fazer você pensar: "Por que ninguém me contou isso antes?"'
-      ></meta>
       <Header />
       <BlogPostsPreview posts={result.posts} />
       {shouldPaginate && <BlogPostsPagination pagination={result.pagination} />}
